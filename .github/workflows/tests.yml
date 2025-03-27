@@ -18,26 +18,24 @@ jobs:
           - windows-latest
         versions:
           #- <lts version> <ghc version>
-          - 22.28 9.6.6
+          - 23.16 9.8.4
+          - 22.43 9.6.6
           - 21.25 9.4.8
           - 20.26 9.2.8
           - 19.33 9.0.2
           - 18.28 8.10.7
+        exclude:
+          # Exclude macOS for older GHC versions that depend on LLVM 13
+          - os: macos-latest
+            versions: 19.33 9.0.2
+          - os: macos-latest
+            versions: 18.28 8.10.7
     steps:
       - name: Parse lts and ghc versions
         shell: sh
         run: |
           echo snapshot=$(echo ${{ matrix.versions }} | cut -d ' ' -f 1) >> $GITHUB_ENV
           echo ghcVersion=$(echo ${{ matrix.versions }} | cut -d ' ' -f 2) >> $GITHUB_ENV
-      - name: Install LLVM 13
-        if: ${{ matrix.os == 'macos-latest' && env.snapshot < 20 }}
-        shell: sh
-        run: |
-          brew install llvm@13
-          echo "/opt/homebrew/opt/llvm@13/bin" >> $GITHUB_PATH
-          echo extraLibDirs="--extra-lib-dirs /opt/homebrew/opt/llvm@13/lib" >> $GITHUB_ENV
-          echo extraIncludeDirsLLVM="--extra-include-dirs /opt/homebrew/opt/llvm@13/include" >> $GITHUB_ENV
-          echo extraIncludeDirsFFI="--extra-include-dirs /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/ffi" >> $GITHUB_ENV
       - name: Setup Haskell
         id: setup-haskell-stack
         uses: haskell-actions/setup@v2.7
