@@ -12,7 +12,7 @@ import Test.Hspec
 import Test.Hspec.QuickCheck
 import ClassyPrelude hiding (undefined)
 import Test.QuickCheck.Arbitrary
-import Prelude (undefined)
+import Prelude (type (~), undefined)
 import Control.Monad.Trans.Writer (tell, Writer, runWriter)
 import qualified Data.Set as Set
 import qualified Data.HashSet as HashSet
@@ -435,7 +435,7 @@ main = hspec $ do
             (otoList . fromByteVector . fromList $ ws) `shouldBe` ws
 
 data DummyException = DummyException
-    deriving (Show, Typeable)
+    deriving Show
 instance Exception DummyException
 
 instance Arbitrary (HashMap Int Char) where

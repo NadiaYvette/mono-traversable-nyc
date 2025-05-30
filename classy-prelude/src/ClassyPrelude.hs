@@ -155,7 +155,6 @@ module ClassyPrelude
 import qualified Prelude
 import Control.Applicative ((<**>),liftA,liftA2,liftA3,Alternative (..), optional)
 import Data.Functor hiding (unzip)
-import Control.Exception (assert)
 import Control.DeepSeq (deepseq, ($!!), force, NFData (..))
 import Control.Monad (when, unless, void, liftM, ap, forever, join, replicateM_, guard, MonadPlus (..), (=<<), (>=>), (<=<), liftM2, liftM3, liftM4, liftM5)
 import qualified Control.Concurrent.STM as STM
@@ -246,7 +245,7 @@ charToLower = Char.toLower
 charToUpper :: Char -> Char
 charToUpper = Char.toUpper
 
-readMay :: (Element c ~ Char, MonoFoldable c, Read a) => c -> Maybe a
+readMay :: (Element c Prelude.~ Char, MonoFoldable c, Read a) => c -> Maybe a
 readMay a = -- FIXME replace with safe-failure stuff
     case [x | (x, t) <- Prelude.reads (otoList a :: String), onull t] of
         [x] -> Just x
