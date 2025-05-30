@@ -1,5 +1,6 @@
 {-# LANGUAGE CPP          #-}
 {-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE TypeOperators #-}
 module Data.IOData where
 
 import           Control.Monad                 (liftM)
@@ -12,7 +13,7 @@ import qualified Data.Text                     as Text
 import qualified Data.Text.IO                  as Text
 import qualified Data.Text.Lazy                as LText
 import qualified Data.Text.Lazy.IO             as LText
-import           Prelude                       (Char, flip, ($), (.), FilePath)
+import           Prelude                       (type (~), Char, flip, ($), (.), FilePath)
 import qualified Prelude
 import           System.IO                     (Handle)
 import qualified System.IO
