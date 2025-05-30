@@ -3,6 +3,7 @@ module Data.ChunkedZip where
 
 import Prelude hiding (zipWith, zipWith3)
 import Control.Arrow ((&&&), (***))
+import qualified Data.Functor as Functor
 import qualified Data.List as List
 import qualified Data.List.NonEmpty as NonEmpty
 import Data.List.NonEmpty (NonEmpty)
@@ -35,7 +36,7 @@ instance Zip [] where
 instance Zip NonEmpty where
     zipWith = NonEmpty.zipWith
     zip = NonEmpty.zip
-    unzip = NonEmpty.unzip
+    unzip = Functor.unzip
 instance Zip Seq.Seq where
     zip = Seq.zip
     zipWith = Seq.zipWith
