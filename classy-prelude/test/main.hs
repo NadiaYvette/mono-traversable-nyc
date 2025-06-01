@@ -12,7 +12,11 @@ import Test.Hspec
 import Test.Hspec.QuickCheck
 import ClassyPrelude hiding (undefined)
 import Test.QuickCheck.Arbitrary
+#if MIN_VERSION_GLASGOW_HASKELL(9,4,0,0)
 import Prelude (type (~), undefined)
+#else
+import Prelude (undefined)
+#endif
 import Control.Monad.Trans.Writer (tell, Writer, runWriter)
 import qualified Data.Set as Set
 import qualified Data.HashSet as HashSet
