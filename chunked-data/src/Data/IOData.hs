@@ -13,7 +13,11 @@ import qualified Data.Text                     as Text
 import qualified Data.Text.IO                  as Text
 import qualified Data.Text.Lazy                as LText
 import qualified Data.Text.Lazy.IO             as LText
+#if MIN_VERSION_GLASGOW_HASKELL(9,4,0,0)
 import           Prelude                       (type (~), Char, flip, ($), (.), FilePath)
+#else
+import           Prelude                       (Char, flip, ($), (.), FilePath)
+#endif
 import qualified Prelude
 import           System.IO                     (Handle)
 import qualified System.IO

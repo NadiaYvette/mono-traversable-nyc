@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 -- | Various zipping and unzipping functions for chunked data structures.
 module Data.ChunkedZip where
 
@@ -36,7 +37,11 @@ instance Zip [] where
 instance Zip NonEmpty where
     zipWith = NonEmpty.zipWith
     zip = NonEmpty.zip
+#if MIN_VERSION_base(4,19,0)
     unzip = Functor.unzip
+#else
+    unzip = NonEmpty.unzip
+#endif
 instance Zip Seq.Seq where
     zip = Seq.zip
     zipWith = Seq.zipWith
