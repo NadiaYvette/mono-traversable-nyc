@@ -38,18 +38,18 @@ class IOData a where
 instance IOData ByteString.ByteString where
     readFile = liftIO . ByteString.readFile
     writeFile fp = liftIO . ByteString.writeFile fp
-    getLine = liftIO ByteString.getLine
+    getLine = liftIO ByteString8.getLine
     hGetContents = liftIO . ByteString.hGetContents
-    hGetLine = liftIO . ByteString.hGetLine
+    hGetLine = liftIO . ByteString8.hGetLine
     hPut h = liftIO . ByteString.hPut h
     hPutStrLn h = liftIO . ByteString8.hPutStrLn h
     hGetChunk = liftIO . flip ByteString.hGetSome defaultChunkSize
 instance IOData LByteString.ByteString where
     readFile = liftIO . LByteString.readFile
     writeFile fp = liftIO . LByteString.writeFile fp
-    getLine = liftM LByteString.fromStrict (liftIO ByteString.getLine)
+    getLine = liftM LByteString.fromStrict (liftIO ByteString8.getLine)
     hGetContents = liftIO . LByteString.hGetContents
-    hGetLine = liftM LByteString.fromStrict . liftIO . ByteString.hGetLine
+    hGetLine = liftM LByteString.fromStrict . liftIO . ByteString8.hGetLine
     hPut h = liftIO . LByteString.hPut h
     hPutStrLn h lbs = liftIO $ do
         LByteString.hPutStr h lbs
