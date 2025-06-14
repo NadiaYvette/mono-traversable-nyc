@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           minlen
-version:        0.1.0.0
+name:           minlen-nyc
+version:        0.2.0.0
 synopsis:       Express the minimum length of a container in its type
 description:    See docs and README at <http://www.stackage.org/package/minlen>
 category:       Data
-homepage:       https://github.com/snoyberg/mono-traversable#readme
-bug-reports:    https://github.com/snoyberg/mono-traversable/issues
+homepage:       https://github.com/NadiaYvette/mono-traversable-nyc#readme
+bug-reports:    https://github.com/NadiaYvette/mono-traversable-nyc/issues
 author:         Michael Snoyman
-maintainer:     michael@snoyman.com
+maintainer:     Nadia Chambers <nadia.yvette.chambers@gmail.com>
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
@@ -22,17 +22,17 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/snoyberg/mono-traversable
+  location: https://github.com/NadiaYvette/mono-traversable-nyc
 
 library
   exposed-modules:
       Data.MinLen
   other-modules:
-      Paths_minlen
+      Paths_minlen_nyc
   hs-source-dirs:
       src
   build-depends:
       base >=4.13 && <5
-    , mono-traversable
+    , mono-traversable-nyc
     , transformers
   default-language: Haskell2010

@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           classy-prelude
-version:        1.5.0.3
+name:           classy-prelude-nyc
+version:        1.6.0.0
 synopsis:       A typeclass-based Prelude.
 description:    See docs and README at <http://www.stackage.org/package/classy-prelude>
 category:       Control, Prelude
-homepage:       https://github.com/snoyberg/mono-traversable#readme
-bug-reports:    https://github.com/snoyberg/mono-traversable/issues
+homepage:       https://github.com/NadiaYvette/mono-traversable-nyc#readme
+bug-reports:    https://github.com/NadiaYvette/mono-traversable-nyc/issues
 author:         Michael Snoyman
-maintainer:     michael@snoyman.com
+maintainer:     Nadia Chambers <nadia.yvette.chambers@gmail.com>
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
@@ -22,13 +22,13 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/snoyberg/mono-traversable
+  location: https://github.com/NadiaYvette/mono-traversable-nyc
 
 library
   exposed-modules:
       ClassyPrelude
   other-modules:
-      Paths_classy_prelude
+      Paths_classy_prelude_nyc
   hs-source-dirs:
       src
   ghc-options: -Wall -fno-warn-orphans
@@ -38,16 +38,16 @@ library
     , basic-prelude >=0.7
     , bifunctors
     , bytestring
-    , chunked-data >=0.3
+    , chunked-data-nyc >= 0.4
     , containers >=0.4.2
     , deepseq
     , dlist >=0.7
     , ghc-prim
     , hashable
-    , mono-traversable >=1.0
-    , mono-traversable-instances
+    , mono-traversable-nyc >= 1.1
+    , mono-traversable-instances-nyc
     , mtl
-    , mutable-containers ==0.3.*
+    , mutable-containers-nyc == 0.4.*
     , primitive
     , say
     , stm
@@ -65,7 +65,7 @@ test-suite test
   type: exitcode-stdio-1.0
   main-is: main.hs
   other-modules:
-      Paths_classy_prelude
+      Paths_classy_prelude_nyc
   hs-source-dirs:
       test
   ghc-options: -Wall
@@ -74,7 +74,7 @@ test-suite test
   build-depends:
       QuickCheck
     , base >=4.13 && <5
-    , classy-prelude
+    , classy-prelude-nyc
     , containers
     , hspec >=1.3
     , transformers

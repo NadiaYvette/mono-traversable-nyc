@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           mono-traversable-instances
-version:        0.1.1.0
+name:           mono-traversable-instances-nyc
+version:        0.2.0.0
 synopsis:       Extra typeclass instances for mono-traversable
 description:    See docs and README at <http://www.stackage.org/package/mono-traversable-instance>
 category:       Data
-homepage:       https://github.com/snoyberg/mono-traversable#readme
-bug-reports:    https://github.com/snoyberg/mono-traversable/issues
+homepage:       https://github.com/NadiaYvette/mono-traversable-nyc#readme
+bug-reports:    https://github.com/NadiaYvette/mono-traversable-nyc/issues
 author:         Michael Snoyman
-maintainer:     michael@fpcomplete.com
+maintainer:     Nadia Chambers <nadia.yvette.chambers@gmail.com>
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
@@ -22,13 +22,13 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/snoyberg/mono-traversable
+  location: https://github.com/NadiaYvette/mono-traversable-nyc
 
 library
   exposed-modules:
       Data.MonoTraversable.Instances
   other-modules:
-      Paths_mono_traversable_instances
+      Paths_mono_traversable_instances_nyc
   hs-source-dirs:
       src
   build-depends:
@@ -37,7 +37,7 @@ library
     , containers
     , dlist >=0.6 && <1.1
     , dlist-instances ==0.1.*
-    , mono-traversable ==1.0.*
+    , mono-traversable-nyc == 1.1.*
     , semigroupoids >=3.0
     , transformers
     , vector-instances

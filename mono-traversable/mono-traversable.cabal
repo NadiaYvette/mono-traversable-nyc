@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           mono-traversable
-version:        1.0.21.0
+name:           mono-traversable-nyc
+version:        1.1.0.0
 synopsis:       Type classes for mapping, folding, and traversing monomorphic containers
 description:    Please see the README at <https://www.stackage.org/package/mono-traversable>
 category:       Data
-homepage:       https://github.com/snoyberg/mono-traversable#readme
-bug-reports:    https://github.com/snoyberg/mono-traversable/issues
+homepage:       https://github.com/NadiaYvette/mono-traversable-nyc#readme
+bug-reports:    https://github.com/NadiaYvette/mono-traversable-nyc/issues
 author:         Michael Snoyman, John Wiegley, Greg Weber
-maintainer:     michael@snoyman.com
+maintainer:     Nadia Chambers <nadia.yvette.chambers@gmail.com>
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
@@ -22,7 +22,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/snoyberg/mono-traversable
+  location: https://github.com/NadiaYvette/mono-traversable-nyc
 
 library
   exposed-modules:
@@ -32,7 +32,7 @@ library
       Data.NonNull
       Data.Sequences
   other-modules:
-      Paths_mono_traversable
+      Paths_mono_traversable_nyc
   hs-source-dirs:
       src
   ghc-options: -Wall
@@ -53,7 +53,7 @@ test-suite test
   type: exitcode-stdio-1.0
   main-is: Main.hs
   other-modules:
-      Paths_mono_traversable
+      Paths_mono_traversable_nyc
   hs-source-dirs:
       test
   ghc-options: -O0
@@ -67,7 +67,7 @@ test-suite test
     , containers
     , foldl
     , hspec
-    , mono-traversable
+    , mono-traversable-nyc
     , text
     , transformers
     , unordered-containers
@@ -80,7 +80,7 @@ benchmark all
   other-modules:
       InitTails
       Sorting
-      Paths_mono_traversable
+      Paths_mono_traversable_nyc
   hs-source-dirs:
       bench
   ghc-options: -Wall -O2 -with-rtsopts=-A32m
@@ -90,7 +90,7 @@ benchmark all
     , containers
     , deepseq
     , gauge
-    , mono-traversable
+    , mono-traversable-nyc
     , mwc-random
     , text
     , vector

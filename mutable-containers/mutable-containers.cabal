@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           mutable-containers
-version:        0.3.4.2
+name:           mutable-containers-nyc
+version:        0.4.0.0
 synopsis:       Abstractions and concrete implementations of mutable containers
 description:    See docs and README at <http://www.stackage.org/package/mutable-containers>
 category:       Data
-homepage:       https://github.com/snoyberg/mono-traversable#readme
-bug-reports:    https://github.com/snoyberg/mono-traversable/issues
+homepage:       https://github.com/NadiaYvette/mono-traversable-nyc#readme
+bug-reports:    https://github.com/NadiaYvette/mono-traversable-nyc/issues
 author:         Michael Snoyman
-maintainer:     michael@fpcomplete.com
+maintainer:     Nadia Chambers <nadia.yvette.chambers@gmail.com>
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
@@ -22,7 +22,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/snoyberg/mono-traversable
+  location: https://github.com/NadiaYvette/mono-traversable-nyc
 
 library
   exposed-modules:
@@ -35,7 +35,7 @@ library
       Data.Mutable.PRef
       Data.Mutable.SRef
       Data.Mutable.URef
-      Paths_mutable_containers
+      Paths_mutable_containers_nyc
   hs-source-dirs:
       src
   ghc-options: -O2
@@ -43,7 +43,7 @@ library
       base >=4.13 && <5
     , containers
     , ghc-prim
-    , mono-traversable
+    , mono-traversable-nyc
     , primitive >=0.5.2.1
     , vector
   default-language: Haskell2010
@@ -52,7 +52,7 @@ test-suite test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_mutable_containers
+      Paths_mutable_containers_nyc
   hs-source-dirs:
       test
   build-tool-depends:
@@ -62,7 +62,7 @@ test-suite test
     , base >=4.13 && <5
     , containers
     , hspec
-    , mutable-containers
+    , mutable-containers-nyc
     , primitive
     , vector
   default-language: Haskell2010
@@ -71,7 +71,7 @@ benchmark deque
   type: exitcode-stdio-1.0
   main-is: deque.hs
   other-modules:
-      Paths_mutable_containers
+      Paths_mutable_containers_nyc
   hs-source-dirs:
       bench
   ghc-options: -Wall -O2 -rtsopts
@@ -79,7 +79,7 @@ benchmark deque
       base >=4.13 && <5
     , containers
     , gauge
-    , mutable-containers
+    , mutable-containers-nyc
     , vector
   default-language: Haskell2010
 
@@ -87,7 +87,7 @@ benchmark ref
   type: exitcode-stdio-1.0
   main-is: ref.hs
   other-modules:
-      Paths_mutable_containers
+      Paths_mutable_containers_nyc
   hs-source-dirs:
       bench
   ghc-options: -Wall -O2 -rtsopts
@@ -95,6 +95,6 @@ benchmark ref
       base >=4.13 && <5
     , containers
     , gauge
-    , mutable-containers
+    , mutable-containers-nyc
     , vector
   default-language: Haskell2010

@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           classy-prelude-yesod
+name:           classy-prelude-yesod-nyc
 version:        1.5.0
 synopsis:       Provide a classy prelude including common Yesod functionality.
 description:    See docs and README at <http://www.stackage.org/package/classy-prelude-yesod>
 category:       Control, Yesod
-homepage:       https://github.com/snoyberg/mono-traversable#readme
-bug-reports:    https://github.com/snoyberg/mono-traversable/issues
+homepage:       https://github.com/NadiaYvette/mono-traversable-nyc#readme
+bug-reports:    https://github.com/NadiaYvette/mono-traversable-nyc/issues
 author:         Michael Snoyman
-maintainer:     michael@snoyman.com
+maintainer:     Nadia Chambers <nadia.yvette.chambers@gmail.com>
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
@@ -22,20 +22,20 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/snoyberg/mono-traversable
+  location: https://github.com/NadiaYvette/mono-traversable-nyc
 
 library
   exposed-modules:
       ClassyPrelude.Yesod
   other-modules:
-      Paths_classy_prelude_yesod
+      Paths_classy_prelude_yesod_nyc
   hs-source-dirs:
       src
   build-depends:
       aeson
     , base >=4.13 && <5
-    , classy-prelude ==1.5.0.*
-    , classy-prelude-conduit ==1.5.0.*
+    , classy-prelude-nyc == 1.6.0.*
+    , classy-prelude-conduit-nyc == 1.6.0.*
     , data-default
     , http-conduit
     , http-types
